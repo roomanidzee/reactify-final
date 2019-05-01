@@ -1,44 +1,14 @@
-import React from 'react';
-
 import axios from 'axios';
 
-const initialState = {
-    apiURL: "https://swapi.co/api/people/"
-};
+export async function getAllPersons() {
 
-type State = Readonly<typeof initialState>;
+    try{
 
-type Props = {
-    apiURL: State["apiURL"]
-}
+        const response = await axios.get("https://swapi.co/api/people/")
+        return await response.data.results
 
-export default class PersonService extends React.Component<Props, State>{
-
-    readonly state: State = initialState;
-
-    constructor(props: Props){
-        super(props);
-
-        this.handleAllPersons = this.handleAllPersons.bind(this);
-
+    }catch(err){
+        console.error(err);
     }
-
-    handleAllPersons = () => {
-
-        return async () => {
-
-            try{
-
-                const response = await axios.get(this.state.apiURL);
-
-                return response.data.results;
-
-            }catch (err) {
-                console.error(err);
-            }
-
-        }
-
-    };
 
 }
