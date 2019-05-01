@@ -28,14 +28,6 @@ const personReducer: Reducer<PersonsState> = (state = initialState, action) => {
             }
         }
 
-        case PersonsActionTypes.ADD_PERSON: {
-            return {
-                ...state,
-                loading: false,
-                data: action.payload
-            }
-        }
-
         default: {
             return state
         }

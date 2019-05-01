@@ -19,8 +19,7 @@ export interface Person {
 
 export enum PersonsActionTypes {
     FETCH_DATA = '@@persons/FETCH_DATA',
-    GET_ALL = '@@persons/GET_ALL',
-    ADD_PERSON = '@@persons/ADD_PERSON'
+    GET_ALL = '@@persons/GET_ALL'
 }
 
 export interface PersonsState {

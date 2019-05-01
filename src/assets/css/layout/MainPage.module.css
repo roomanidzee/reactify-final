@@ -1,0 +1,27 @@
+.header {
+    color: #ffff00;
+    background-color: #282c34;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    min-height: 200px;
+    font-family: 'Star Jedi', arial;
+    font-size: 20px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.center-align {
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.content {
+    color: #282c34;
+    text-align: center;
+    min-height: 200px;
+}
+
+.footer {
+    text-align: center;
+}

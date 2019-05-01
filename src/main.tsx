@@ -5,7 +5,7 @@ import {ApplicationState} from "./store";
 import {Store} from "redux";
 import { History } from 'history';
 import {Provider} from "react-redux";
-import App from "./components/App";
+import Routes from "./routes/routes";
 
 
 interface MainProps {
@@ -19,7 +19,7 @@ const Main: React.FC<MainProps> = ({ store, history }) => {
         <Provider store={store}>
 
             <ConnectedRouter history={history}>
-                <App/>
+                <Routes/>
             </ConnectedRouter>
 
         </Provider>
