@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+import { createHashHistory } from 'history';
+import Main from './main';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import configure from './store/configure';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const history = createHashHistory();
+
+const initialState = (window as any).initialReduxState;
+const store = configure(history, initialState);
+
+ReactDOM.render(<Main store={store} history={history}/>, document.getElementById('root'));
+serviceWorker.register();

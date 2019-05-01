@@ -17,9 +17,10 @@ export interface Person {
     url: string;
 }
 
-export const enum PersonsActionTypes {
+export enum PersonsActionTypes {
     FETCH_DATA = '@@persons/FETCH_DATA',
-    GET_ALL = '@@persons/GET_ALL'
+    GET_ALL = '@@persons/GET_ALL',
+    ADD_PERSON = '@@persons/ADD_PERSON'
 }
 
 export interface PersonsState {
