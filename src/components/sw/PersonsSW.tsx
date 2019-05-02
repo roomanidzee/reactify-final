@@ -28,7 +28,7 @@ interface State {
 
 type Props = PropsFromState & PropsFromDispatch & RouteComponentProps<RouteParams> & ConnectedReduxProps
 
-class PersonsSW extends React.Component<Props, State>{
+class PersonsSWComponent extends React.Component<Props, State>{
 
     constructor(props: Props){
         super(props);
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
     fetchRequest
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PersonsSW);
+export default connect(mapStateToProps, mapDispatchToProps)(PersonsSWComponent);
