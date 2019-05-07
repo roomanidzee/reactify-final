@@ -1,34 +1,17 @@
 import React, {ReactNode} from "react";
 
 import { Spin } from 'antd';
-import {Person} from "../../store/persons/types";
 import {fetchRequest} from "../../store/persons/actions";
 import {RouteComponentProps} from "react-router";
 import {ApplicationState, ConnectedReduxProps} from "../../store";
 
 import {connect} from "react-redux";
-
-interface PropsFromState {
-    loading: boolean;
-    data: Person[];
-    errors?: string
-}
-
-interface PropsFromDispatch {
-    fetchRequest: typeof fetchRequest
-}
-
-interface RouteParams {
-    name: string
-}
-
-interface State {
-    persons: Person[]
-}
+import {PropsFromState, PropsFromDispatch, RouteParams} from "./PropsAndValues";
+import PersonCardComponent from "./PersonCard";
 
 type Props = PropsFromState & PropsFromDispatch & RouteComponentProps<RouteParams> & ConnectedReduxProps
 
-class PersonsSWComponent extends React.Component<Props, State>{
+class PersonsSWComponent extends React.Component<Props, {}>{
 
     constructor(props: Props){
         super(props);
@@ -53,14 +36,13 @@ class PersonsSWComponent extends React.Component<Props, State>{
 
         const {data, loading} = this.props;
 
-        //костыль, переделать
+        console.log("DATA: " + data);
+
         let newPersons = data.map(person => (
-           <div key = {person.name}>
-               <p>{person.name}</p>
-               <br/>
-               <p>{person.mass}</p>
-               <br/>
-           </div>
+           <PersonCardComponent
+               key={person.name}
+               personForCard={person}
+           />
         ));
 
         return (

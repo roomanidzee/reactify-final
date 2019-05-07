@@ -4,7 +4,7 @@
     text-align: center;
     vertical-align: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: 40px;
     font-family: 'Star Jedi', arial;
     font-size: 20px;
     text-shadow: 4px 4px 4px #aaa;
@@ -17,9 +17,10 @@
 }
 
 .content {
-    color: #282c34;
+    color: #ffffff;
+    background-color: #008000;
     text-align: center;
-    min-height: 200px;
+    min-height: 100px;
 }
 
 .footer {

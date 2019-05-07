@@ -13,9 +13,13 @@ export default class MainPageComponent extends React.Component<{}, {}>{
             <div className={styles.centerAlign}>
 
                 <Layout>
-                    <Header className={styles.header}>STAR WARS</Header>
-                    <Content className={styles.content}>Каталог для отображения персонажей</Content>
-                    <Footer className={styles.footer}>Андрей Романов ©2019</Footer>
+                    <Header className={styles.header + ' ' + styles.centerAlign}>STAR WARS</Header>
+                    <Content className={styles.content + ' ' + styles.centerAlign}>
+                        <div className={styles.centerAlign}>
+                            Каталог для отображения персонажей
+                        </div>
+                    </Content>
+                    <Footer className={styles.footer + ' ' + styles.centerAlign}>Андрей Романов ©2019</Footer>
                 </Layout>
 
             </div>

@@ -22,6 +22,7 @@ const MainForm = withFormik<FormProps, FormValues>({
     validationSchema: Yup.object().shape({
 
         login: Yup.string()
+                  .max(20)
                   .email("Неправильно введён адрес электронной почты"),
 
         password: Yup.string()
